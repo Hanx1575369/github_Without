@@ -1,23 +1,28 @@
 
 from fileinput import close
+from operator import index
 from docx import Document
-with open('exam.docx',encoding="UTF-8") as f:
-    data=  f.read()
-    lenght=(len(data))
-    for i in range(1,100):
-        try:
-            a=data.index("Câu "+ str(i))
-            print(a)
-            d=[]
-            d.append(str(a))
-            print(d[i-1])
-            #print(data[a:b])
-            #print("ccccccccccccccccccccccccccccccccccccccc")
-            #d.append(data[0:6])
-            #print(a,b)
-            #print(d[i-1])
-        except:
-            break
+def reading(spl):
+    with open('exam.docx',encoding="UTF-8") as f:
+        data=  f.read()
+        data= data.split("~")
+        return data[spl]
+def cutting(index):
+    list=reading(index)
+    listt=[]
+    listt.append(list[:list.index("A.")])
+    listt.append(list[list.index("A."):list.index("B.")])
+    listt.append(list[list.index("B."):list.index("C.")])
+    listt.append(list[list.index("C."):list.index("D.")])
+    listt.append(list[list.index("D."):])
+    #print(listt)
+    return listt
+hope=cutting(1)
+print(hope)
+
+
+
+#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
 
 
 

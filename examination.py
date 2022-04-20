@@ -1,0 +1,10 @@
+a="fhbshtfh,jaduhsuf,duhfhyba"
+b=a.split(",")
+c=b[0]
+d=c.index("b")
+e=c.index("t")
+#print(d,e)
+ag=[]
+print(c[d:e+1])
+ag.append(c[d:e+1])
+print(ag)
